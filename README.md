@@ -1,3 +1,14 @@
+# Etapes de mise en route : 
+
+- Créer un fichier '.env' a la racine du projet
+- Créer les variables suivantes:
+```
+APPLICATIONID="l'application id du bot"
+DESCRIPTIONCHANNELID="l'ID du channel description"
+DISCORD_TOKEN="le token du bot discord"
+```
+- Sauvegarder le fichier
+
 # Arborescence
 
 .git
