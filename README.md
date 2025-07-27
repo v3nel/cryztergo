@@ -16,7 +16,9 @@ DISCORD_TOKEN="le token du bot discord"
 - .git
 - commands/utility        Cela est obligatoire selon la documentation de discord.js
 - core
-    - config.js           C'est l'endroit ou tout les secrets de dotenv seront convertis en const afin de n'appeler dotenv qu'une seule fois
+    - config.js  C'est l'endroit ou tout les secrets de dotenv seront convertis en const afin de n'appeler dotenv qu'une seule fois
+    - db.js      C'est l'endroit ou la db va être initialisé
+    - genconfig.js Script a effectuer une fois avant de lancer le script principal afin de déclarer les variables des channels ids
 - embeds                  C'est l'endroit ou les embeds seront stockes
 - node_modules
 - .env

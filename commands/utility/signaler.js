@@ -1,4 +1,6 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, MessageFlags } = require('discord.js');
+const { deliveredSignalEmbed, staffSignalEmbed } = require("../../embeds/signaler");
+const { STAFF_CHANNEL } = require("../../core/channelids")
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -15,9 +17,16 @@ module.exports = {
 				.setRequired(true)
 		),
 	async execute(interaction) {
-		const joueur = interaction.options.getUser("joueur");
-		const reason = interaction.options.getString("raison");
+		const staffChannel = interaction.client.channels.cache.get(STAFF_CHANNEL);
+		
+		await staffChannel.send({
+			embeds: [staffSignalEmbed(interaction)],
+		})
 
-		await interaction.reply(`Tu as signalé ${joueur} pour la raison : ${reason}`)
+		await interaction.reply({
+			embeds: [deliveredSignalEmbed(interaction)],
+			flags: MessageFlags.Ephemeral,
+		});
+
 	},
 }
