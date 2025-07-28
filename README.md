@@ -4,9 +4,6 @@
 - Créer les variables suivantes:
 ```
 APPLICATIONID="l'application id du bot"
-DESCRIPTIONCHANNELID="l'ID du channel description"
-RULECHANNELID="l'ID du channel regles"
-UPDATECHANNELID="l'ID du channel des majs"
 DISCORD_TOKEN="le token du bot discord"
 ```
 - Sauvegarder le fichier
