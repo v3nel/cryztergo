@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
-const { RULE_CHANNEL } = require("../core/channelids");
+const { RULE_CHANNEL } = require("../core/discordids");
 
 function RuleEmbed(interaction) {
 	const avatar = interaction.user.displayAvatarURL({dynamic: true, size: 512,});

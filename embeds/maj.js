@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
-const { UPDATES_CHANNEL } = require("../core/channelids");
+const { UPDATES_CHANNEL } = require("../core/discordids");
 
 function UpdateEmbed(interaction) {
 	const avatar = interaction.user.displayAvatarURL({ dynamic: true, size: 512 });

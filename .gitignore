@@ -1,3 +1,4 @@
 node_modules
+localids.json
 .env
-core/channelids.js
+core/discordids.js

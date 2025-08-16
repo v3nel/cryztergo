@@ -4,7 +4,7 @@ function deliveredSignalEmbed(interaction) {
 	const avatar = interaction.user.displayAvatarURL({dynamic: true, size: 512});
 	return new EmbedBuilder()
 		.setTitle("✅ Votre signalement a été envoyé")
-		.setDescription(`Nous allons discuter de ton signalement envers ${interaction.user.username} avec le staff`)
+		.setDescription(`Nous allons discuter de ton signalement envers ${interaction.options.getUser("joueur")} avec le staff`)
 		.setFooter({ text: `Demandé par ${interaction.user.username}`, iconURL: avatar})
 };
 

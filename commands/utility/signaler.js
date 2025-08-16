@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, MessageFlags } = require('discord.js');
 const { deliveredSignalEmbed, staffSignalEmbed } = require("../../embeds/signaler");
-const { STAFF_CHANNEL } = require("../../core/channelids")
+const { STAFF_CHANNEL } = require("../../core/discordids")
 
 module.exports = {
 	data: new SlashCommandBuilder()
