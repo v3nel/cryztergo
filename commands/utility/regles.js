@@ -1,7 +1,7 @@
-const { SlashCommandBuilder, MessageFlags } = require("discord.js");
-const { RuleEmbed } = require("../../embeds/regles");
+import { SlashCommandBuilder, MessageFlags } from "discord.js";
+import { RuleEmbed } from "../../embeds/regles.js";
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName("regles")
 		.setDescription("Regarde les règles du serveur"),

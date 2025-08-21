@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+import { EmbedBuilder } from "discord.js";
 
 function deliveredSignalEmbed(interaction) {
 	const avatar = interaction.user.displayAvatarURL({dynamic: true, size: 512});
@@ -26,4 +26,4 @@ function staffSignalEmbed(interaction) {
 		.setColor("Yellow")
 };
 
-module.exports = { staffSignalEmbed, deliveredSignalEmbed }
+export { staffSignalEmbed, deliveredSignalEmbed };

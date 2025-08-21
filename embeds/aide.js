@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+import { EmbedBuilder } from "discord.js";
 
 function HelpEmbed(interaction, state = 'default'){
 	if(state === 'default') {
@@ -25,4 +25,4 @@ function HelpEmbed(interaction, state = 'default'){
 	}
 }
 
-module.exports = { HelpEmbed };
+export { HelpEmbed };

@@ -1,7 +1,7 @@
-const { SlashCommandBuilder, MessageFlags } = require("discord.js");
-const { UpdateEmbed } = require("../../embeds/maj");
+import { SlashCommandBuilder, MessageFlags } from "discord.js";
+import { UpdateEmbed } from "../../embeds/maj.js";
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName("updates")
 		.setDescription("Voir les patchnotes du serveur"),

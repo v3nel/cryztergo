@@ -1,8 +1,8 @@
-const { SlashCommandBuilder, MessageFlags } = require('discord.js');
-const { deliveredSignalEmbed, staffSignalEmbed } = require("../../embeds/signaler");
-const { STAFF_CHANNEL } = require("../../core/discordids")
+import { SlashCommandBuilder, MessageFlags } from "discord.js";
+import { deliveredSignalEmbed, staffSignalEmbed } from "../../embeds/signaler.js";
+import { STAFF_CHANNEL } from "../../core/discordids.js";
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName("signaler")
 		.setDescription("Signaler un joueur qui pose problème")

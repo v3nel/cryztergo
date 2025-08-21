@@ -1,7 +1,7 @@
-const { SlashCommandBuilder, MessageFlags } = require("discord.js");
-const { modEmbed } = require("../../embeds/moderateurs")
+import { SlashCommandBuilder, MessageFlags } from "discord.js";
+import { modEmbed } from "../../embeds/moderateurs.js";
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName("moderateurs")
 		.setDescription("Retourne une liste de touts les modérateurs"),

@@ -1,5 +1,5 @@
-const { EmbedBuilder } = require("discord.js");
-const { DESCRIPTION_CHANNEL } = require("../core/discordids");
+import { EmbedBuilder } from "discord.js";
+import { DESCRIPTION_CHANNEL } from "../core/discordids.js";
 
 function ServerEmbed(interaction) {
 	const avatar = interaction.user.displayAvatarURL({ dynamic: true, size: 512,});
@@ -10,4 +10,4 @@ function ServerEmbed(interaction) {
 		.setColor('Blue');
 }
 
-module.exports = { ServerEmbed };
+export { ServerEmbed };

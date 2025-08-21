@@ -1,7 +1,7 @@
-const { SlashCommandBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, ComponentType, MessageFlags } = require("discord.js");
-const { HelpEmbed } = require('../../embeds/aide');
+import { SlashCommandBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, ComponentType, MessageFlags } from "discord.js";
+import { HelpEmbed } from "../../embeds/aide.js";
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName("aide")
 		.setDescription("Demande de l'aide"),

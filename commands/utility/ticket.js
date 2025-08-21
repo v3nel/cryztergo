@@ -1,6 +1,6 @@
-const {SlashCommandBuilder, MessageFlags} = require("discord.js");
-const { TICKET_CATEGORY, ARCHIVEDTICKET_CATEGORY, STAFF_CHANNEL } = require("../../core/discordids")
-const { NewTicket, TicketSent, StaffTicketEmbed } = require("../../embeds/ticket");
+import { SlashCommandBuilder, MessageFlags } from "discord.js";
+import { TICKET_CATEGORY, ARCHIVEDTICKET_CATEGORY, STAFF_CHANNEL } from "../../core/discordids.js";
+import { NewTicket, TicketSent, StaffTicketEmbed } from "../../embeds/ticket.js";
 
 async function nameChannel(interaction) {
 	const username = interaction.user.username.toLowerCase();
@@ -13,7 +13,7 @@ async function nameChannel(interaction) {
 	return `ticket-${username}-${gen}`
 }
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName("ticket")
 		.setDescription("Crée un ticket afin de discuter d'une problématique avec les modérateurs")

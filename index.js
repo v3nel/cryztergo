@@ -1,7 +1,11 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const {Client, Events, GatewayIntentBits, Collection, MessageFlags} = require("discord.js");
-const { discordToken } = require("./core/config");
+import { fileURLToPath } from 'url';
+import { pathToFileURL } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+import fs from "node:fs";
+import path from "node:path";
+import {Client, Events, GatewayIntentBits, Collection, MessageFlags} from "discord.js";
+import { discordToken } from "./core/config.js";
 
 const token = discordToken;
 
@@ -17,10 +21,11 @@ for (const folder of commandsF) {
 	const commandFi = fs.readdirSync(commandsP).filter(file => file.endsWith(".js"));
 	for (const file of commandFi) {
 		const fileP = path.join(commandsP, file);
-		const command = require(fileP);
-		if ('data' in command && 'execute' in command) {
-			client.commands.set(command.data.name, command);
-			console.log(`[INFO] La commande ${command.data.name} a bien été synchronisée`);
+		const command = await import(pathToFileURL(fileP).href);
+		const cmd = command.default || command;
+		if ('data' in cmd && 'execute' in cmd) {
+			client.commands.set(cmd.data.name, cmd);
+			console.log(`[INFO] La commande ${cmd.data.name} a bien été synchronisée`);
 		} else {
 			console.log(`[WARN] La commande ${fileP} n'a pas d'attribut 'data' ou 'execute'`);
 		}
@@ -32,7 +37,8 @@ const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'
 
 for (const file of eventFiles) {
   const filePath = path.join(eventsPath, file);
-  const event = require(filePath);
+	const eventModule = await import(pathToFileURL(filePath).href);
+   const event = eventModule.default || eventModule;
   if (event.once) {
     client.once(event.name, (...args) => event.execute(...args, client));
   } else {

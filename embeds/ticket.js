@@ -18,6 +18,7 @@ export function TicketSent(interaction, channel) {
 		.setTitle("Ticket envoyé")
 		.setDescription(`Ton ticket a été créé avec succès !!\nLe staff a aussi été notifié de la création du ticket\nTu peux accéder a ce dernier ici: ${channel}`)
 		.setFooter({text: `Demandé par ${interaction.user.username}`, iconURL: avatar})
+		.setColor("Blue")
 }
 
 

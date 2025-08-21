@@ -1,7 +1,7 @@
-const { SlashCommandBuilder, MessageFlags } = require("discord.js");
-const { ServerEmbed } = require("../../embeds/serveur.js")
+import { SlashCommandBuilder, MessageFlags } from "discord.js";
+import { ServerEmbed } from "../../embeds/serveur.js";
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName("serveur")
 		.setDescription("Découvrez le but du serveur Cryztergo"),

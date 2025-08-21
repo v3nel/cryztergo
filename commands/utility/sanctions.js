@@ -1,11 +1,11 @@
-const { SlashCommandBuilder } = require("discord.js");
-const { defaultSanctionEmbed } = require("../../embeds/sanctions")
+import { SlashCommandBuilder } from "discord.js";
+import { defaultSanctionEmbed } from "../../embeds/sanctions.js";
 
 function getSanction(user) {
-	
+	// ...existing code...
 };
 
-module.exports = {
+export default {
 	data: new SlashCommandBuilder()
 		.setName("sanctions")
 		.setDescription("Récupérez les sanctions possibles")

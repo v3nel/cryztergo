@@ -1,6 +1,6 @@
-const { Events } = require("discord.js")
+import { Events } from "discord.js";
 
-module.exports = {
+export default {
 	name: Events.ClientReady,
 	once: true,
 	async execute(client) {
@@ -8,6 +8,5 @@ module.exports = {
 
 		const guild = client.guilds.cache.first();
 		if (!guild) return console.error("Le serveur n'existe pas");
-
 	}
 }

@@ -1,5 +1,5 @@
-const { EmbedBuilder } = require("discord.js");
-const { RULE_CHANNEL } = require("../core/discordids");
+import { EmbedBuilder } from "discord.js";
+import { RULE_CHANNEL } from "../core/discordids.js";
 
 function RuleEmbed(interaction) {
 	const avatar = interaction.user.displayAvatarURL({dynamic: true, size: 512,});
@@ -10,4 +10,4 @@ function RuleEmbed(interaction) {
 		.setFooter({text: `Demandé par ${interaction.user.username}`, iconURL: avatar});
 };
 
-module.exports = { RuleEmbed };
+export { RuleEmbed };
